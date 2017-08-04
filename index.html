@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Virtual Fidget Spinner/ Fortune Spinner</title>
+</head>
+<link rel="stylesheet" type="text/css" href="style.css">
+
+<body>
+	<!-- Fidget Spinner image -->
+    <div>
+        <img src="http://westhun.com/wp-content/uploads/2017/03/yellow.png" id="spinner" class="fidget hidden"></div>
+        <!-- Wheel and pointer -->
+    <div class="group wheel">
+        <img width="150px" height="100px" src="https://upload.wikimedia.org/wikipedia/en/f/f1/Down_Arrow_Icon.png" id="arrow" class="arrowposition">
+        <div class="circle" id="spinner">
+            <li><span class="textincircle">1</span></li>
+            <li><span class="textincircle">2</span></li>
+            <li><span class="textincircle">3</span></li>
+            <li><span class="textincircle">4</span></li>
+            <li><span class="textincircle">5</span></li>
+            <li><span class="textincircle">6</span></li>
+        </div>
+    </div>
+    <button class="toggleview" id="togglebutton">Toggle View</button>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="propeller.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+    $("[id='spinner']").propeller({ inertia: 0.99, speed: 20, step: 8 });
+    $("#togglebutton").click(function() {
+        $(".fidget").toggleClass("hidden");
+        $(".wheel").toggleClass("hidden");
+    });
+});
+</script>
+
+</html>
